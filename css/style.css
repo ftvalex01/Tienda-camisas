@@ -40,7 +40,7 @@ a{
     text-decoration: none;
 }
 img{
-    max-width: 100%;
+    width: 100%;
 }
 .contenedor{
     max-width: 120rem;
@@ -175,7 +175,6 @@ h3{
 
 .nosotros__imagen{
     grid-row: 1/2;
-    width: 100%;
 }
 
 /* BLOQUES */
@@ -190,9 +189,7 @@ h3{
 .bloque__titulo{
     margin: 0;
 }
-.bloque__imagen{
-    width: 100%;
-}
+
 
 
 /* FOOTER */
@@ -206,6 +203,40 @@ h3{
     font-family: var(--fuentePrincipal);
     font-size: 2.2rem;
 }
+
+
+
+/* PAGINA PRODUCTO */
+.formulario{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap:2rem
+}
+.formulario__campo{
+   border:1rem solid var(--primarioOscuro);
+   background-color: transparent;
+   color:var(--secundario);
+   font-size: 2rem;
+   font-family: Arial, Helvetica, sans-serif;
+   padding: 1rem;
+   appearance:none;
+   
+}
+.formulario__submit{
+    background-color: var(--secundario);
+    border: none;
+    font-size: 3rem;
+    font-family: var(--fuentePrincipal);
+    padding: 2rem;
+    grid-column: 1/3;
+}
+.formulario__submit:hover{
+    cursor: pointer;
+    background-color: var(--secundarioOscuro);
+}
+
+
+
 
 /* MediaQuerys */
 @media (min-width: 768px) {
@@ -227,11 +258,21 @@ h3{
     .bloques{
         grid-template-columns: repeat(4,1fr);
     }
+    .camisa{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 2rem;
+    }
 }
 @media (min-width: 380px) {
     .nosotros__imagen{
         grid-row: 1/2;
         width: 100%;
         height: 100%;
+    }
+}
+@media (max-width: 768px) {
+    .formulario__campo{
+        width: 100%;
     }
 }
